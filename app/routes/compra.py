@@ -60,3 +60,7 @@ async def historial_compras(request: Request):
             "videojuegos": videojuegos
         }
     )
+@router.get("/por_usuario")
+async def compras_usuario_form(request: Request):
+    clientes = cliente.listar_clientes()
+    return templates.TemplateResponse("compras_usuario.html", {"request": request, "clientes": clientes})
