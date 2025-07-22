@@ -7,6 +7,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from app.routes import cliente
 from app.routes import cliente, videojuego
+from routes import compra
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -14,6 +15,7 @@ app = FastAPI()
 
 app.include_router(cliente.router)
 app.include_router(videojuego.router)
+app.include_router(compra.router)  # agrega el router de compras
 
 templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
 

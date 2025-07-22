@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Compra registrada</title>
+    <style>
+        body {
+            background-color: #fef8f0;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+        .mensaje {
+            background-color: #fffaf3;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #6b4b3e;
+            margin-bottom: 20px;
+        }
+        .acciones {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        a.button {
+            background-color: #d8a86f;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+        a.button:hover {
+            background-color: #c98b52;
+        }
+    </style>
+</head>
+<body>
+    <div class="mensaje">
+        <h1>¡Compra registrada con éxito!</h1>
+        <p>La compra ha sido agregada correctamente al sistema.</p>
+    </div>
+    <div class="acciones">
+        <a href="/compras/nueva" class="button">Registrar otra compra</a>
+        <a href="/compras/menu" class="button">Volver al menú de compras</a>
+        <a href="/" class="button">Volver al menú principal</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Compras</title>
+    <style>
+        body {
+            background-color: #fef8f0;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+        h1 { color: #6b4b3e; margin-bottom: 30px; }
+        .botones {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        a.button {
+            background-color: #d8a86f;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        a.button:hover {
+            background-color: #c98b52;
+        }
+        .volver-container {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gestión de Compras</h1>
+    <div class="botones">
+        <a href="/compras/nueva" class="button">Registrar compra</a>
+        <a href="/compras/por_usuario" class="button">Consultar compras por usuario</a>
+        <a href="/compras/historial" class="button">Ver historial de compras</a> <!-- <--- NUEVO BOTÓN -->
+    </div>
+    <div class="volver-container">
+        <a href="/" class="button">Volver al menú principal</a>
+    </div>
+</body>
+</html>

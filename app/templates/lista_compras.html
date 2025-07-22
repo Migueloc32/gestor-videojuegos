@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Historial de Compras</title>
+    <style>
+        body {
+            background-color: #fef8f0;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+        h1 { color: #6b4b3e; margin-bottom: 30px; }
+        table {
+            background-color: #fffaf3;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            border-collapse: collapse;
+            width: 90%;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px 18px;
+            border-bottom: 1px solid #d8a86f;
+            text-align: left;
+        }
+        th { background-color: #d8a86f; color: white; }
+        tr:last-child td { border-bottom: none; }
+        .volver-container { margin-top: 30px; }
+        a.button {
+            background-color: #d8a86f;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+        a.button:hover { background-color: #c98b52; }
+    </style>
+</head>
+<body>
+    <h1>Historial de Compras</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Videojuego</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in compras %}
+            <tr>
+                <td>
+                    {% for u in clientes %}
+                        {% if u.id == c.cliente_id %}
+                            {{ u.nombre }}
+                        {% endif %}
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for v in videojuegos %}
+                        {% if v.id == c.videojuego_id %}
+                            {{ v.nombre }}
+                        {% endif %}
+                    {% endfor %}
+                </td>
+                <td>{{ c.fecha }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="volver-container">
+        <a href="/compras/menu" class="button">Volver al menú de compras</a>
+        <a href="/" class="button">Volver al menú principal</a>
+    </div>
+</body>
+</html>
