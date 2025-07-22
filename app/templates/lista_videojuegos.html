@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Videojuegos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fef8f0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 { color: #6b4b3e; margin-bottom: 30px; }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th { background-color: #d8a86f; color: white; }
+        tr:nth-child(even) { background-color: #f9f5f1; }
+        a.button {
+            background-color: #d8a86f;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        a.button:hover { background-color: #c98b52; }
+    </style>
+</head>
+<body>
+    <h1>Lista de Videojuegos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Género</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for v in videojuegos %}
+            <tr>
+                <td>{{ v.id }}</td>
+                <td>{{ v.nombre }}</td>
+                <td>{{ v.genero }}</td>
+                <td>${{ "%.2f"|format(v.precio) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div style="margin-top: 30px;">
+        <a href="/videojuegos/menu" class="button">Volver al menú de videojuegos</a>
+    </div>
+</body>
+</html>
