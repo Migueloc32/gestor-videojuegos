@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Clientes</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fef8f0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #6b4b3e;
+            margin-bottom: 30px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #d8a86f;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f5f1;
+        }
+
+        a {
+            margin-top: 30px;
+            text-decoration: none;
+            color: #6b4b3e;
+            font-weight: bold;
+        }
+
+        .btn-eliminar {
+            background-color: #cc3b3b;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-eliminar:hover {
+            background-color: #a32d2d;
+        }
+    </style>
+</head>
+<body>
+    <h1>👥 Lista de Clientes</h1>
+
+    {% if clientes %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente in clientes %}
+                    <tr>
+                        <td>{{ cliente.id }}</td>
+                        <td>{{ cliente.nombre }}</td>
+                        <td>{{ cliente.direccion }}</td>
+                        <td>{{ cliente.telefono }}</td>
+                        <td>
+                            <form method="post" action="/clientes/eliminar" onsubmit="return confirm('¿Seguro que deseas eliminar este cliente?');">
+                                <input type="hidden" name="cliente_id" value="{{ cliente.id }}">
+                                <button type="submit" class="btn-eliminar">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No hay clientes registrados.</p>
+    {% endif %}
+
+    <a href="/clientes/menu">⬅️ Volver al menú</a>
+</body>
+</html>

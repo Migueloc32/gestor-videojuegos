@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Clientes</title>
+    <style>
+        body {
+            background-color: #fef8f0;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #6b4b3e;
+            margin-bottom: 30px;
+        }
+
+        .botones {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        a.button {
+            background-color: #d8a86f;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        a.button:hover {
+            background-color: #c98b52;
+        }
+    </style>
+</head>
+<body>
+    <h1>📋 Gestión de Clientes</h1>
+    <div class="botones">
+        <a class="button" href="/clientes/formulario">➕ Registrar Cliente</a>
+        <a class="button" href="/clientes/lista"> Ver Clientes</a>
+        <a class="button" href="/">🏠 Volver al Menú Principal</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!-- templates/registro_exitoso.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro Exitoso</title>
+    <style>
+        body {
+            background-color: #e8fff2;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>✅ ¡Registro Exitoso!</h1>
+    <p>El cliente <strong>{{ cliente.nombre }}</strong> fue registrado correctamente.</p>
+    <a href="/clientes/menu">Volver al menú</a>
+</body>
+</html>
