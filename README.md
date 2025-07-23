@@ -3,6 +3,9 @@
 Este sistema permite gestionar una tienda de videojuegos, incluyendo el manejo de clientes, videojuegos y compras. La API implementada con **FastAPI** permite realizar operaciones CRUD, consultar listados y realizar transformaciones sobre los recursos.
 
 ---
+## **Felipe Aristizabal|faristizabalg@unal.edu.co **
+## **David Gavalo Molina|dgavalo@unal.edu.co**
+## **Juan Miguel Ochoa Agudelo| jochoaag@unal.edu.co**
 
 ## **Requisitos del sistema**
 
