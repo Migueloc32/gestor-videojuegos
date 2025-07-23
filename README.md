@@ -92,8 +92,8 @@ Las pruebas unitarias se implementan usando `pytest` y cubren los casos de uso p
 ## **Acceso a la documentación interactiva**
 
 Cuando el servidor está corriendo, accede a:
-- [http://localhost:8000/docs](http://localhost:8000/docs) (Swagger UI)
-- [http://localhost:8000/redoc](http://localhost:8000/redoc) (Redoc)
+- [http://localhost:8000/docs](http://localhost:8001/docs) (Swagger UI)
+- [http://localhost:8000/redoc](http://localhost:8001/redoc) (Redoc)
 
 ---
 
